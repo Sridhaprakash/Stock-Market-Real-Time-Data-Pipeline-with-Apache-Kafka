@@ -16,3 +16,13 @@ bin/kafka-topics.sh --describe --topic demo_test --bootstrap-server localhost:90
 bin/kafka-console-producer.sh --topic demo_test --bootstrap-server localhost:9092
 bin/kafka-console-consumer.sh --topic demo_test --from-beginning --bootstrap-server localhost:9092
 
+#View the Logs in Real-Time 
+tail -f server.log
+
+#Specifies the partitioner class to be used for partitioning messages. The RoundRobinPartitioner is used here, meaning that messages will be assigned to partitions in a round-robin fashion.
+bin/kafka-console-producer.sh --topic demo_test --property "key.serializer=org.apache.kafka.common.serialization.StringSerializer" --property "partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner" --bootstrap-server localhost:9092
+
+#creating consumer grp
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic demo_test --group group1
+
+
