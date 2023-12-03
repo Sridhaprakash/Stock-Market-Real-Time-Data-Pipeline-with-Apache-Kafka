@@ -26,3 +26,12 @@ bin/kafka-console-producer.sh --topic demo_test --property "key.serializer=org.a
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic demo_test --group group1
 
 
+1. creat a docker-compose.yml file
+2. run- docker compose -f docker-compose.yml up -d
+3. docker images
+4. docker ps  - docker process status
+5. docker exec -it <kafka_conatiner_id> /bin/sh
+
+
+
+
