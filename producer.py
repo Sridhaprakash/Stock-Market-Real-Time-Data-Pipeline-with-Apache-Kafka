@@ -4,7 +4,7 @@ from time import sleep
 from json import dumps
 
 # Specify your Kafka broker address
-bootstrap_servers = '<Your Public IP>:9092'
+bootstrap_servers = 'localhost:9094'
 
 # Kafka producer configuration
 conf = {
